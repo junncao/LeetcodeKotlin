@@ -16,8 +16,8 @@ class Day2_24 {
     fun threeSum(nums: IntArray): List<List<Int>> {
         val res = mutableListOf<List<Int>>()
         nums.sort()
-        for (i in 0  until nums.size - 2) {
-            if (i > 0 && nums[i] == nums[i - 1]) {              // skip same result
+        for (i in 0 until nums.size - 2) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
                 continue
             }
             var j = i + 1
@@ -28,12 +28,12 @@ class Day2_24 {
                     res.add(listOf(nums[i], nums[j], nums[k]))
                     j++
                     k--
-                    while (j < k && nums[j] == nums[j - 1]) j++ // skip same result
-                    while (j < k && nums[k] == nums[k + 1]) k-- // skip same result
-                } else if (nums[j] + nums[k] > target) {
-                    k--
-                } else {
+                    while (j < k && nums[j] == nums[j - 1]) j++ // skip same result, don't forget j < k
+                    while (j < k && nums[k] == nums[k + 1]) k--
+                }else if (nums[j] + nums[k] < target){
                     j++
+                }else{
+                    k--
                 }
             }
         }
