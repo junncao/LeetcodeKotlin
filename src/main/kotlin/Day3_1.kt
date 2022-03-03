@@ -41,6 +41,7 @@ class Day3_1 {
     fun permute(nums: IntArray): List<List<Int>>{
         val res = mutableListOf<List<Int>>()
         val visited = IntArray(nums.size)
+
         fun backtrack(path: ArrayList<Int>){
             if (path.size == nums.size){
                 res.add(path.toList())
@@ -62,5 +63,5 @@ class Day3_1 {
 }
 fun main(){
     val solution = Day3_1()
-    println(solution.permute(intArrayOf(1,2,3)))
+    println(solution.permute(intArrayOf(1,1,3)))
 }
