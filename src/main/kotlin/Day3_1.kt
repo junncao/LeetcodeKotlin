@@ -58,6 +58,32 @@ class Day3_1 {
         backtrack(ArrayList())
         return res
     }
+    //99
+    fun recoverTree(root: TreeNode?): Unit {
+        var first: TreeNode? = null
+        var second: TreeNode? = null
+        var pre: TreeNode = TreeNode(Int.MIN_VALUE)
+
+        fun traverse(node: TreeNode?){
+            if (node == null) return
+            traverse(node.left)
+
+            if (first == null && pre.`val` > node.`val`){
+                first = pre
+            }
+            if (first != null && pre.`val` > node.`val`){
+                second = node
+            }
+            pre = node
+
+            traverse(node.right)
+        }
+        traverse(root)
+        val temp = first!!.`val`
+        first!!.`val` = second!!.`val`
+        second!!.`val` = temp
+
+    }
 
 
 }
