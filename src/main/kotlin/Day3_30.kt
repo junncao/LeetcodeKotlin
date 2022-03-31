@@ -35,10 +35,26 @@ class Day3_30 {
         return root2.`val` == root1.`val` && check(root1.left, root2.right) && check(root1.right, root2.left)
     }
 
-//    fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
-//
-//
-//    }
+    fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
+        val res = mutableListOf<IntArray>()
+        var i = 0
+        while( i < intervals.size && intervals[i][1] < newInterval[0]){
+            res.add(intervals[i])
+            i++
+        }
+        while (i < intervals.size && intervals[i][0] > newInterval[1]){
+            newInterval[0] = kotlin.math.min(newInterval[0], intervals[i][0])
+            newInterval[1] = kotlin.math.max(newInterval[1], intervals[i][1])
+            i++
+        }
+        res.add(newInterval)
+        while (i < intervals.size){
+            res.add(intervals[i])
+            i++
+        }
+        return res.toTypedArray()
+
+    }
 }
 
 fun main(){
