@@ -35,10 +35,10 @@ class Day3_30 {
         return root2.`val` == root1.`val` && check(root1.left, root2.right) && check(root1.right, root2.left)
     }
 
-    fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
-
-
-    }
+//    fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
+//
+//
+//    }
 }
 
 fun main(){
