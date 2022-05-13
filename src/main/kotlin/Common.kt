@@ -11,6 +11,10 @@ class Node(var `val`: Int) {
     var right: Node? = null
     var next: Node? = null
 }
+
+class NodeN(var `val`: Int) {
+    var children: List<NodeN?> = listOf()
+}
 fun iterateList(a: ListNode?){
     var b: ListNode? = a
     while (b!=null){
@@ -24,3 +28,4 @@ fun TreeNode.print(){
     println(this.`val`)
     right?.print()
 }
+

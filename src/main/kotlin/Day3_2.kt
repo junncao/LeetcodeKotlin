@@ -17,6 +17,7 @@ class Day3_2 {
             val sub2 = palindrome(i, i+1)
             res = if (res.length >= sub1.length) res else sub1
             res = if (res.length >= sub2.length) res else sub2
+
         }
         return res
 

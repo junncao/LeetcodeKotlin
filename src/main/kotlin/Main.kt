@@ -2,8 +2,9 @@ import kotlin.math.abs
 import kotlin.math.max
 
 fun main(args: Array<String>) {
-
-    println(lengthOfLongestSubstring("qweeewqweeeqweeeqwert"))
+    val amountStr = "64.20"
+    println((amountStr.toBigDecimal().setScale(2).toDouble() * 100).toLong())
+//    println(lengthOfLongestSubstring("qweeewqweeeqweeeqwert"))
 }
 fun search(nums: IntArray, target: Int): Int {
     var start = 0
