@@ -11,6 +11,7 @@ class Day2_25{
      *     var right: TreeNode? = null
      * }
      */
+//最大路径和，后序遍历，在遍历过程中比较找到最大值
 
     class Solution {
         fun maxPathSum(root: TreeNode?): Int {

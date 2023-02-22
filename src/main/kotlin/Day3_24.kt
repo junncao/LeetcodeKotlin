@@ -77,7 +77,6 @@ class Day3_24 {
 
     private fun existBacktrack(board: Array<CharArray>, word: String, i: Int, j: Int): Boolean{
         if (word.isEmpty()) return true
-        word.slice(1 until word.length)
         if (i < 0 || i >= board.size || j < 0 || j >= board[0].size || board[i][j] != word[0]){
             return false
         }

@@ -1,11 +1,43 @@
+import com.google.gson.GsonBuilder
+import com.google.gson.annotations.SerializedName
 import kotlin.math.abs
 import kotlin.math.max
 
 fun main(args: Array<String>) {
-    val amountStr = "64.20"
-    println((amountStr.toBigDecimal().setScale(2).toDouble() * 100).toLong())
+//    val amountStr = "64.20"
+//    println((amountStr.toBigDecimal().setScale(2).toDouble() * 100).toLong())
 //    println(lengthOfLongestSubstring("qweeewqweeeqweeeqwert"))
+//    val regex = "https://www.kuaishou.com/f/(\\w+)/?".toRegex()
+//    val bool = regex.matches("https://www.kuaishou.com/f/adfasda8878ADFSsd")
+//    val res = regex.matchEntire("https://www.kuaishou.com/f/adfasda8878ADFSsd/")?.groupValues.takeIf {
+//        (it?.size ?: 0) >= 2
+//    }?.get(1)
+//    println(res)
+    val r = "0".toFloat()
+    println(r)
+    val gs = GsonBuilder().disableHtmlEscaping().create()
+    val params = """
+        {
+        url: "sss",
+        title: "ss"
+        }
+    """.trimIndent()
+    val s = gs.fromJson(params, AddFloatParam::class.java)
+    println(s)
 }
+data class AddFloatParam(
+    @SerializedName("url")
+    val url: String,
+    @SerializedName("title")
+    val title: String = url,
+    @SerializedName("desc")
+    val desc: String = url,
+    @SerializedName("icon")
+    val icon: String = "",
+    @SerializedName("offset")
+    val offset: String = "0"
+)
+
 fun search(nums: IntArray, target: Int): Int {
     var start = 0
     var end = nums.size

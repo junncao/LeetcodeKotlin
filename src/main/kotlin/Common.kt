@@ -15,13 +15,6 @@ class Node(var `val`: Int) {
 class NodeN(var `val`: Int) {
     var children: List<NodeN?> = listOf()
 }
-fun iterateList(a: ListNode?){
-    var b: ListNode? = a
-    while (b!=null){
-        println(b.`val`)
-        b = b.next
-    }
-}
 
 fun TreeNode.print(){
     left?.print()
@@ -29,3 +22,31 @@ fun TreeNode.print(){
     right?.print()
 }
 
+fun linkedList(vararg nodes: Int): ListNode {
+    if (nodes.isEmpty()){
+        throw Exception("list can't be empty!")
+    }
+    val head = ListNode(nodes.first())
+    var cur = head
+    for (i in 1 until nodes.size){
+        ListNode(nodes[i]).apply {
+            cur.next = this
+            cur = this
+        }
+    }
+    return head
+}
+
+fun ListNode?.print(){
+    if (this == null){
+        println(null)
+        return
+    }
+    val nodeList = mutableListOf<Int>()
+    var cur = this
+    while (cur!= null){
+        nodeList.add(cur.`val`)
+        cur = cur.next
+    }
+    println(nodeList)
+}

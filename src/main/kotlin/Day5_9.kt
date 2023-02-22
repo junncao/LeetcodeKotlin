@@ -50,7 +50,7 @@ object Day5_9 {
             val twoSumList = twoSum(nums, twoSum, i + 1)
             for (array in twoSumList){
                 array.add(nums[i])
-                res.add(array)
+                res.add(array) 
             }
             while (i < nums.size && nums[i] == nums[i+1]) i++
             i++
@@ -64,7 +64,7 @@ object Day5_9 {
         var res = 0
         for( i in nums.indices){
             sum += nums[i]
-            val remain = (sum+k) % k
+            val remain = (sum+k) % k + k
             val old = countMap.getOrDefault(remain, 0)
             res += old
             countMap[remain] = old + 1

@@ -1,5 +1,6 @@
 
 class Day2_24 {
+    
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val map = mutableMapOf<Int, Int>()
         for (i in nums.indices){
@@ -12,6 +13,8 @@ class Day2_24 {
         }
         return intArrayOf()
     }
+// 三数之和：给一个Int的Array，返回里面之和为0的三个数。
+// 先排序，然后先确定一个数a，然后找另外两个之和为-a的。双指针。注意为了避免有重复的，记得在指针移动的时候跳过值相同的数字。
 
     fun threeSum(nums: IntArray): List<List<Int>> {
         val res = mutableListOf<List<Int>>()

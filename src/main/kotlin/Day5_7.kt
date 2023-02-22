@@ -93,6 +93,6 @@ fun main(){
                 }
             }
         }
-    }, 1)
-    println(iterateList(res))
+    }, 2)
+    res.print()
 }

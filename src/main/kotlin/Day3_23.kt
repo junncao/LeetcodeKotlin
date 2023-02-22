@@ -146,6 +146,7 @@ class Day_3_23 {
                 }
             }
         }
+    // 排序解决重复问题
         Arrays.sort(nums)
         permuteBacktrack()
         return res
